@@ -22,3 +22,9 @@ __pycache__/
 
 # rust
 target/
+
+# Claude reference material (vendored skills/agents/commands) — local only
+.claude/
+
+# project memory notes — local only
+CLAUDE.md
