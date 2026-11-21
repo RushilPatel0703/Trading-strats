@@ -1,0 +1,24 @@
+# secrets
+.env
+
+# data (large, reproducible from downloaders)
+data/*/*
+!data/*/.gitkeep
+
+# reference repos cloned for study
+repos/**
+!repos/.gitkeep
+
+# unrelated legacy MQL5 indicators
+CandleStickPatterns/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+
+# rust
+target/

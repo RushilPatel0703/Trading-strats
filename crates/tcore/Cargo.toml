@@ -1,0 +1,7 @@
+[package]
+name = "tcore"
+version = "0.1.0"
+edition = "2021"
+description = "Hot-path compute (indicators, features, signal math). PyO3 bindings to be added when first needed."
+
+[dependencies]

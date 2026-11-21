@@ -1,0 +1,45 @@
+[project]
+name = "trade"
+version = "0.1.0"
+description = "Algo trading: research, backtesting, sentiment, IBKR execution"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "nautilus_trader[ib]",   # Rust-core event-driven backtest + live engine, IBKR adapter
+    "polars",                # fast dataframes (Rust)
+    "pyarrow",               # parquet storage
+    "numpy",
+    "pandas",
+    "numba",                 # JIT for custom vectorised research code
+    "pyyaml",
+    "python-dotenv",
+    "requests",
+    "feedparser",            # RSS news ingestion
+]
+
+[project.optional-dependencies]
+sentiment = [
+    "transformers",          # FinBERT / financial sentiment models (run locally, free)
+    "torch",
+]
+research = [
+    "jupyterlab",
+    "matplotlib",
+    "yfinance",              # quick free daily data sanity checks only
+]
+
+[dependency-groups]
+dev = ["pytest", "ruff"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/trade"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

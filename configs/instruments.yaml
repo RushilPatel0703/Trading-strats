@@ -1,0 +1,12 @@
+# Target universe. "research" = free historical source, "ib" = how it trades at IBKR.
+# NOTE: CFD/spot research prices differ from futures (basis, roll); validate on IB data before going live.
+fx:
+  - {symbol: EURUSD, research: dukascopy, ib: {secType: CASH, exchange: IDEALPRO}}
+  - {symbol: GBPUSD, research: dukascopy, ib: {secType: CASH, exchange: IDEALPRO}}
+  - {symbol: USDJPY, research: dukascopy, ib: {secType: CASH, exchange: IDEALPRO}}
+gold:
+  - {symbol: XAUUSD, research: dukascopy, ib: {secType: CMDTY, exchange: SMART}}  # spot gold (non-US accounts)
+  - {symbol: MGC,    research: databento, ib: {secType: FUT, exchange: COMEX}}    # micro gold future
+indices:
+  - {symbol: MES, research: dukascopy:USA500IDXUSD, ib: {secType: FUT, exchange: CME}}   # micro S&P 500
+  - {symbol: MNQ, research: dukascopy:USATECHIDXUSD, ib: {secType: FUT, exchange: CME}}  # micro Nasdaq-100
